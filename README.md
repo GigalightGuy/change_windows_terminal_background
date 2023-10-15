@@ -27,7 +27,7 @@ For ease of use, you can also create a .bat file that calls your python script f
 ```batch
 :: bg.bat
 @echo off
-python change_terminal_bg.py
+python C:/full/path/to/change_terminal_bg.py
 ```
 
-If you create a file called bg.bat in the same directory as the python script like the one above, you can then add the directory where your batch script (.bat) lives to your PATH environment variable and then you can just call `bg` from anywhere in your command line and see your terminal background image change.  
+If you create a file called bg.bat in the same directory as the python script like the one above, you can then add the directory where your batch script (.bat) lives to your PATH environment variable and then you can just call `bg` from anywhere in your command line and see your terminal background image change (important to note that you need to call the python script with its full path in the batch script if you want to be able to call it from anywhere).
