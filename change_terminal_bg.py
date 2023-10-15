@@ -10,7 +10,8 @@ def pick_new_background(backgrounds_path, current_background):
     if image_count == 0:
         print("Backgrounds directory is empty")
         return current_background
-    elif image_count == 1 and image_names[0] == current_background:
+    elif image_count == 1 and (backgrounds_path + image_names[0]) == current_background:
+        print("Only one background image available")
         return current_background
         
     chosen_background_path = backgrounds_path + random.choice(image_names)
