@@ -1,4 +1,4 @@
-# change_windows_terminal_background  
+# Change Windows Terminal background image randomly 
 
 Simple python script to swap Windows Terminal background image randomly (the script picks the image randomly from all the images inside a folder/directory).  
 
