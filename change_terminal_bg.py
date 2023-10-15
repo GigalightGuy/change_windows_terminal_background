@@ -5,9 +5,17 @@ import random
 from dotenv import load_dotenv
 
 def pick_new_background(backgrounds_path, current_background):
-    chosen_background_path = backgrounds_path + random.choice(os.listdir(backgrounds_path))
+    image_names = os.listdir(backgrounds_path)
+    image_count = len(image_names)
+    if image_count == 0:
+        print("Backgrounds directory is empty")
+        return current_background
+    elif image_count == 1 and image_names[0] == current_background:
+        return current_background
+        
+    chosen_background_path = backgrounds_path + random.choice(image_names)
     while current_background == chosen_background_path:
-        chosen_background_path = backgrounds_path + random.choice(os.listdir(backgrounds_path))
+        chosen_background_path = backgrounds_path + random.choice(image_names)
 
     return chosen_background_path
 
@@ -29,7 +37,12 @@ def main():
     backgrounds_path = os.getenv("BACKGROUNDS_PATH") 
     settings_path = os.getenv("SETTINGS_PATH") 
 
-    background_image_path = pick_new_background(backgrounds_path, get_current_background(settings_path))
+    current_background = get_current_background(settings_path)
+    background_image_path = pick_new_background(backgrounds_path, current_background)
+
+    if background_image_path == current_background:
+        return
+
     set_background(settings_path,background_image_path)
 
 
