@@ -24,7 +24,7 @@ SETTINGS_PATH=C:/Users/name/AppData/path/to/windows/terminal/settings.json
 After creating the .env file and adding those environment variables, if you run the python script, it should update your Windows Terminal background image.
 
 For ease of use, you can also create a .bat file that calls your python script for you, so you don't have to call `python change_terminal_bg.py` or `python3 change_terminal_bg.py` everytime.  
-```bash
+```batch
 :: bg.bat
 @echo off
 python change_terminal_bg.py
